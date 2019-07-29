@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GroceryService } from '../service/grocery.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,22 @@ import { GroceryService } from '../service/grocery.service';
 })
 export class HomePage {
 groceryList;
-  constructor(private grocery: GroceryService) {
+ item = {
+  name:'',
+  price:Number,
+  type:''
+}
+
+
+  constructor(private grocery: GroceryService,private router:Router) {
 
 this.groceryList = this.grocery.getItems();
 
   }
-
+  goNext() {
+    this.router.navigateByUrl("add-item")
+  }
+update(){
+  this.grocery.update(this.item)
+}
 }

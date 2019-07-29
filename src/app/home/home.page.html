@@ -11,6 +11,9 @@
     <ion-item *ngFor="let grocery of groceryList| async">
       {{grocery.name}}
       {{grocery.price}}
-    </ion-item>
+      {{grocery.type}}
     
+    </ion-item>
+    <ion-button color="secondary"  (click)="goNext()">Add Item Page</ion-button>
+    <ion-button color="secondary"  (click)="update()">Update</ion-button>
 </ion-content>

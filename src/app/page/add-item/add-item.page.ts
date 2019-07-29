@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { GroceryService } from '../../service/grocery.service';
 
 @Component({
   selector: 'app-add-item',
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddItemPage implements OnInit {
  item={
-   name:'',
-   price:0,
-   type:''
+   name:"",
+   price:Number,
+   type:""
  }
-  constructor() { }
+  constructor(private alert: AlertController, private serv: GroceryService) { }
 
   ngOnInit() {
   }
-
+submit(){
+  this.serv.post(this.item,this.alert);
+}
 }
