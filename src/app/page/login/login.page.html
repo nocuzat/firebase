@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title position="centre">Login</ion-title>
+  </ion-toolbar>
+
+
+
+</ion-header>
+   
+
+<ion-content color="secondary">
+  <ion-card padding color="light">
+     <h1>Sign In With Your Email Address</h1>
+  <ion-item>
+    <ion-label floating >Email</ion-label>
+    <ion-input type="text" name="email" [(ngModel)]="user.email">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating >Password</ion-label>
+      <ion-input #input type="password" type="text" name="password" [(ngModel)]="user.password" >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="checkbox" *ngIf="!passwordCheckbox">hide password</ion-label>
+      <ion-label for="checkbox" *ngIf="passwordCheckbox">hide password</ion-label>
+      <ion-checkbox  class="marginTop" id="checkbox" style="border-style: none;" [(ngModel)]="passwordCheckbox" (click)="showPassword(input)"></ion-checkbox>
+    </ion-item>
+    <ion-button expand="block" (click)="login(user)" color="warning"><ion-icon name="mail"></ion-icon>&nbsp;&nbsp;Login</ion-button>
+    <ion-button expand="block" (click)="register()" color="warning"><ion-icon name="mail"></ion-icon>&nbsp;Register</ion-button>
+  </ion-card>
+
+
+    
+<ion-card padding color="light">
+  <div>
+    <h1>Sign In With Your Phone Number</h1>
+    <label for ="phone">Phone Number</label><br>
+    <input type="text" [(ngModel)] = "phoneNumber.country" class = "input" placeholder="e.g +27166766512" maxlength="12">
+
+    <!--<input type="text" [(ngModel)] = "phoneNumber.area" class = "input" placeholder="949" maxlength="3">
+    <input type="text" [(ngModel)] = "phoneNumber.prefix" class = "input" placeholder="555" maxlength="3">
+    <input type="text" [(ngModel)] = "phoneNumber.line" class = "input" placeholder="5555" maxlength="4">-->
+<br><br>
+  <div id = "recaptcha-container"></div>
+  <br>
+  <ion-button expand="block" (click)="sendLoginCode()" color="warning"><ion-icon name="call"></ion-icon>&nbsp;&nbsp;SMS Text Login Code</ion-button>
+
+<div *ngIf = "windowRef.confirmationResult">
+
+  <label for="code">Enter Your Verification Code Here</label>
+  <input type = "text" name ="code" [(ngModel)]="verificationCode" class="input">
+
+  <ion-button (click)="verifyLoginCode()">Verify</ion-button>
+
+</div>
+
+</div>
+
+</ion-card>
+<ion-card padding color="light">
+    <h1>Sign In With Social Media</h1>
+    <ion-button expand="block" (click)="onFacebook()" color="warning"><ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;facebook login</ion-button>
+    <ion-button expand="block" (click)="onTwitter()" color="warning"><ion-icon name="logo-twitter"></ion-icon>&nbsp;&nbsp;twitter login</ion-button>
+</ion-card>
+
+
+
+ </ion-content>
+ 

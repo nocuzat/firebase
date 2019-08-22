@@ -1,19 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+  <ion-toolbar color="medium">
+    <ion-title position="centre">
+      Home Page
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-    <ion-item *ngFor="let grocery of groceryList| async">
+<ion-content color="secondary">
+  <ion-card color="light">
+    <ion-item *ngFor="let grocery of itemList"(click)="onSelect(grocery)">
       {{grocery.name}}
       {{grocery.price}}
       {{grocery.type}}
     
+      
     </ion-item>
-    <ion-button color="secondary"  (click)="goNext()">Add Item Page</ion-button>
-    <ion-button color="secondary"  (click)="update()">Update</ion-button>
+    <br>
+    <ion-button color="secondary"  routerLink="/add-item" expand="block">Add Item</ion-button>
+    <ion-button color="secondary"  (click)="signOut()" expand="block">Log Out</ion-button>
+  </ion-card>
+    
+    <!--<ion-button color="secondary"  (click)="update()">Update</ion-button>-->
 </ion-content>
+
+

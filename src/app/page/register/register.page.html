@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="medium">
+      <ion-icon name="arrow-round-back" routerLink="/login" class="larger"></ion-icon>
+    <ion-title position="centre">Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <ion-card color="light">
+  <ion-item>
+    <ion-label floating >Email</ion-label>
+    <ion-input type="text" name="email" [(ngModel)]="user.email">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating >Password</ion-label>
+      <ion-input type="text" name="password" [(ngModel)]="user.password">
+      </ion-input>
+    </ion-item>
+    <ion-button (click)="register(user)" color="secondary" expand="block">Register</ion-button>
+  </ion-card>
+</ion-content>

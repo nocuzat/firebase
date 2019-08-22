@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import * as firebaseui from 'firebaseui';
+
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyC_Nx5JGrhOiCNh2YvYdf2Aqs5WITSxMcc",
@@ -21,12 +26,10 @@ const firebaseConfig = {
   appId: "1:519618432154:web:16c6467721ea8ef9"
 };
 
-
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AngularFireModule.initializeApp(firebaseConfig),AngularFirestoreModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AngularFireModule.initializeApp(firebaseConfig),AngularFirestoreModule,AngularFireAuthModule ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,24 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>addItem</ion-title>
+  <ion-toolbar color="medium">
+    <ion-icon name="arrow-round-back" routerLink="/home" class="larger"></ion-icon>
+    <ion-title position="centre">Add Item</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-  <ion-item>
+<ion-content color="secondary">
+  <ion-card padding color="light">
+  <!--<ion-item>
+        <ion-label position="floating" type="text" name="key"></ion-label>
+        <ion-input [(ngModel)]="itemList.key">key:</ion-input>
+      </ion-item>-->
+  <ion-item >
     <ion-label position="floating" type="text" name="name"></ion-label>
-    <ion-input [(ngModel)]="item.name">Name:</ion-input>
+    <ion-input [(ngModel)]="itemList.name">Name:</ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating" type="number"name="price"></ion-label>
-    <ion-input [(ngModel)]="item.price">Price:</ion-input>
+    <ion-input [(ngModel)]="itemList.price">Price:</ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating" type="text"name="type"></ion-label>
-    <ion-input [(ngModel)]="item.type">Type:</ion-input>
+    <ion-input [(ngModel)]="itemList.type">Type:</ion-input>
   </ion-item>
 
-  <ion-button color="secondary" name="submit" (click)="submit()">Add Item</ion-button>
+  <ion-button color="secondary" name="submit" (click)="submit()" extend="block">Add Item</ion-button>
+</ion-card>
 
 </ion-content>
