@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="medium">
+  <ion-toolbar color="warning">
       <ion-icon name="arrow-round-back" routerLink="/login" class="larger"></ion-icon>
     <ion-title position="centre">Register</ion-title>
   </ion-toolbar>
@@ -17,6 +17,6 @@
       <ion-input type="text" name="password" [(ngModel)]="user.password">
       </ion-input>
     </ion-item>
-    <ion-button (click)="register(user)" color="secondary" expand="block">Register</ion-button>
+    <ion-button (click)="register(user)" color="warning" expand="block">Register</ion-button>
   </ion-card>
 </ion-content>

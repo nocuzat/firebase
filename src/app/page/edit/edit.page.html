@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="medium">
+  <ion-toolbar color="warning">
     <ion-icon name="arrow-round-back" routerLink="/home" class="larger"></ion-icon>
     <ion-title position="centre">Edit</ion-title>
   </ion-toolbar>
@@ -20,7 +20,7 @@
         <ion-input [(ngModel)]="item.type">Type:</ion-input>
     </ion-item>
     <br>
-      <ion-button color="secondary"  (click)="update(item, item.key)" expand="block">Update</ion-button>
-      <ion-button color="secondary"  (click)="delete(item, item.key)" expand="block">Delete</ion-button>
+      <ion-button color="warning"  (click)="update(item, item.key)" expand="block">Update</ion-button>
+      <ion-button color="warning"  (click)="delete(item, item.key)" expand="block">Delete</ion-button>
 </ion-card>
 </ion-content>
